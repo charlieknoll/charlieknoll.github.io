@@ -86,7 +86,7 @@
         function updateUSDBTC() {
             //var url = 'https://cors.io/?u=http://api.coindesk.com/v1/bpi/currentprice/USD.json';
             //https://api.coindesk.com/v1/bpi/currentprice.json
-            var url = 'https://blockchain.info/ticker';
+            var url = 'https://blockchain.info/ticker?cors=true';
             var request = new XMLHttpRequest();
             request.open('GET', url, true);
             request.onreadystatechange = function () {
