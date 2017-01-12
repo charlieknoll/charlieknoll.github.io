@@ -84,8 +84,9 @@
             request.send();
         }
         function updateUSDBTC() {
-            //var url = 'http://cors.io/?u=http://api.coindesk.com/v1/bpi/currentprice/USD.json';
-            var url = 'http://api.coindesk.com/v1/bpi/currentprice/USD.json';
+            //var url = 'https://cors.io/?u=http://api.coindesk.com/v1/bpi/currentprice/USD.json';
+            //https://api.coindesk.com/v1/bpi/currentprice.json
+            var url = 'https://blockchain.info/ticker';
             var request = new XMLHttpRequest();
             request.open('GET', url, true);
             request.onreadystatechange = function () {
@@ -95,7 +96,7 @@
                     status = request.status;
                     if (status == 200) {
                         data = JSON.parse(request.responseText);
-                        USDBTC = data.bpi.USD.rate_float;
+                        USDBTC = data.USD.last;
                         setTitle();
                     }
                 }
