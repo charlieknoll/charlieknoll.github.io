@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to GitHub Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=1c6e601c459114fc4f4713f1f276e1dedf530c77">
+</head>
+<body>
+
+    <h2 id="instructions-to-buy-an-expanse-bond-using-the-ebs">Instructions to Buy an Expanse Bond using the EBS</h2>
+<h3 id="run-parity-for-expanse">Run Parity for Expanse</h3>
+<ul>
+<li>Exit existing Parity node if it is running by right clicking the Parity icon in the system tray and selecting exit</li>
+<li>Open a command prompt in the Parity.exe file location</li>
+<li>run parity.exe ui --chain expanse</li>
+</ul>
+<h3 id="set-up-and-fund-an-expanse-account">Set up and fund an Expanse Account</h3>
+<ul>
+<li>Parity should have opened a new browser tab at <a href="http://127.0.0.1:8180/#/accounts">http://127.0.0.1:8180/#/accounts</a></li>
+<li>Click the &quot;New Account&quot; button to either generate or import an Expanse account</li>
+<li>Send at least 101 EXP to the new account, 100 EXP for the bond and 1 EXP for fees (you probably don't need 1 EXP but that should cover it)</li>
+</ul>
+<h3 id="set-up-the-ebs-contract-in-parity">Set up the EBS Contract in Parity</h3>
+<ul>
+<li>Click the &quot;Contracts&quot; tab</li>
+<li>Click &quot;Watch Contract&quot;</li>
+<li>Select &quot;Custom Contract&quot; then click Next</li>
+<li>Paste 0x88acbc37b80ea9f7692baf3eb2390c8a34f02457 as the network address for the contract</li>
+<li>Enter a descriptive name such as &quot;EXP EBS&quot;</li>
+<li>Paste the abi (don't include the wrapping single quotes) from: <a href="https://raw.githubusercontent.com/expanse-org/bond-dapp/master/contracts/live-contracts/Bonds.abi.js">https://raw.githubusercontent.com/expanse-org/bond-dapp/master/contracts/live-contracts/Bonds.abi.js</a></li>
+<li>Click &quot;Add Contract&quot;</li>
+</ul>
+<h3 id="fund-the-contract">Fund the contract</h3>
+<ul>
+<li>Click the &quot;Accounts&quot; tab</li>
+<li>Click the Account from which you want to buy a bond</li>
+<li>Click the &quot;Transfer&quot; button</li>
+<li>Click in the Recipient address field and you should be able to clcik the &quot;EXP EBS&quot; contract</li>
+<li>Enter 100 ETH to transfer</li>
+<li>Click Send and wait for the transaction to get at least confirmation</li>
+</ul>
+<h3 id="verify-that-the-ebs-has-your-funds">Verify that the EBS has your funds</h3>
+<ul>
+<li>Click the &quot;Contracts&quot; tab and the &quot;EXP EBS&quot; contract</li>
+<li>Click the address field of the &quot;users&quot; function and click the account that funded the EXP EBS contract</li>
+<li>Click the &quot;QUERY&quot; button and you should see a 100 ETH balance (click the red slider button to convert to ETH from wei)</li>
+</ul>
+<h3 id="buy-a-bond">Buy a bond</h3>
+<ul>
+<li>Note the &quot;nBonds&quot; value for future verification (in my case it was 2)</li>
+<li>Click the &quot;Execute&quot; button at the top of the contract window</li>
+<li>Be sure that the funding account is selected as the from account</li>
+<li>Select the &quot;buy&quot; function to execute</li>
+<li>Enter 1 in the &quot;_multiplier&quot; field (be sure that the unit toggle button is red indicating wei)</li>
+<li>Click the &quot;advanced sending options&quot; checkbox</li>
+<li>Click &quot;Next&quot;</li>
+<li>Enter 252000 in the gas field</li>
+<li>Click &quot;POST TRANSACTION&quot; and wait for the transaction to confirm</li>
+</ul>
+<h3 id="verify-you-are-the-owner-of-the-bond">Verify you are the owner of the bond</h3>
+<ul>
+<li>Click the Accounts tab, back the contracts tab then click the EXP EBS contract</li>
+<li>Note the nBonds value</li>
+<li>Enter that value in the &quot;bonds&quot; query and click &quot;QUERY&quot;</li>
+<li>You should see that you are the owner of the bond# you entered</li>
+<li>It is possible that more bonds were created so you may have to query the bonds query multiple times to see your owned bonded (e.g if nBonds = 877 then try 876, 875, 843 etc until you find yours)</li>
+<li>I could not figure out a way to look up bond ownership using the account address</li>
+</ul>
+
+
+</body>
+</html>
