@@ -21,6 +21,22 @@
     
 }
     </style>
+</head>
+<body>
+    <h1 style="color: darkGreen;" id="pageTitle">Balance</h1>
+    <h5 style="color: gray" id="overall" class="hidden"></h5>
+    <h2 id="rateUSDETH"></h2>
+    <h3 style="color: gray"  id="rateUSDBTC"></h3>
+    <h4 id="rateBTCETH"></h4>
+    <h4 id="blockNumber"></h4>
+    <h4 id="gasLimit"></h4>
+
+    <div></div>
+    <div id="coinbase"></div>
+    <div id="original"></div>
+    <div id="current"></div>
+    <div id="diff"></div>
+</body>
     <script type="text/javascript">
         Number.prototype.formatMoney = function (c, d, t) {
             var n = this,
@@ -116,22 +132,7 @@
 
 
     </script>
-</head>
-<body>
-    <h1 style="color: darkGreen;" id="pageTitle">Balance</h1>
-    <h5 style="color: gray" id="overall" class="hidden"></h5>
-    <h2 id="rateUSDETH"></h2>
-    <h3 style="color: gray"  id="rateUSDBTC"></h3>
-    <h4 id="rateBTCETH"></h4>
-    <h4 id="blockNumber"></h4>
-    <h4 id="gasLimit"></h4>
 
-    <div></div>
-    <div id="coinbase"></div>
-    <div id="original"></div>
-    <div id="current"></div>
-    <div id="diff"></div>
-</body>
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', watchBalance, false);
     document.onclick = function (e) {
