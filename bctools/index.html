@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BC Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#284E8C">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content" id="main">
+            <div class="button" id="button-slope-angle" onclick="app.transition('main','slope-angle')">SLOPE ANGLE</div>
+            <div class="button" id="button-alpha-angle" onclick="app.transition('main','alpha-angle')">ALPHA ANGLE</div>
+        </div>
+        <div class="content" id="slope-angle" hidden>
+            <div id='slope-angle-container'>
+                <div class="slope-panel slope-ok" hidden>Slab Avalanches Almost Unheard Of</div>
+                <div class="slope-panel slope-warning" hidden>Slab Avalanches Can and Do Occur</div>
+                <div class="slope-panel slope-danger" hidden>Prime Slab Avalanche Terrain</div>
+                <div id='slope-angle-value'></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

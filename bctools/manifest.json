@@ -1,0 +1,17 @@
+{
+    "short_name": "BC Tools",
+    "name": "BC Tools (Alpha Angle and Slope Angle)",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "icons": [
+        {
+            "src": "img/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#284E8C",
+    "description": "A collection of simple tools for staying safe in the backcountry"
+}
