@@ -39,6 +39,7 @@ const constraints = window.constraints = {
 };
 async function init(e) {
     window.navigator = window.navigator || {};
+    var d = await navigator.mediaDevices.enumerateDevices()
     navigator.getUserMedia = navigator.getUserMedia ||
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia ||
