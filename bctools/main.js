@@ -36,7 +36,8 @@ app.dangerPanel = app.panels.find(p => { return p.classList.contains('slope-dang
 var aaContainer = document.getElementById("outer-container")
 const constraints = window.constraints = {
     audio: false,
-    video: { width: aaContainer.offsetWidth, height: aaContainer.offsetHeight }
+    video: { facingMode: { exact: "environment" } }
+    //video: { width: { max: aaContainer.offsetWidth }, height: { max: aaContainer.offsetHeight } }
 };
 async function init(e) {
     window.navigator = window.navigator || {};
@@ -50,7 +51,7 @@ async function init(e) {
     var device = d.find(v => v.label.includes('facing back'))
     if (!device) device = d.find(v => v.kind.includes('videoinput'))
 
-    constraints.video.deviceId = d.deviceId
+    //constraints.video.deviceId = { exact: d.deviceId }
     if (navigator.getUserMedia === null) alert("No camera!")
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     const video = document.querySelector('video');
