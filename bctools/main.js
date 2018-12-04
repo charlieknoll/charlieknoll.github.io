@@ -36,11 +36,12 @@ app.dangerPanel = app.panels.find(p => { return p.classList.contains('slope-dang
 var aaContainer = document.getElementById("outer-container")
 const constraints = window.constraints = {
     audio: false,
-    video: { width: aaContainer.offsetWidth, height: aaContainer.offsetHeight, facingMode: "environment" }
+    video: { width: aaContainer.offsetWidth, height: aaContainer.offsetHeight }
 };
 async function init(e) {
     window.navigator = window.navigator || {};
     var d = await navigator.mediaDevices.enumerateDevices()
+    alert(JSON.stringify(d))
     navigator.getUserMedia = navigator.getUserMedia ||
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia ||
