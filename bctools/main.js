@@ -41,14 +41,16 @@ const constraints = window.constraints = {
 async function init(e) {
     window.navigator = window.navigator || {};
     var d = await navigator.mediaDevices.enumerateDevices()
-    alert(JSON.stringify(d))
+    //alert(JSON.stringify(d))
     navigator.getUserMedia = navigator.getUserMedia ||
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia ||
         null;
     //alert('test')
+    var device = d.find(v => v.label.includes('facing back'))
+    if (!device) device = d.find(v => v.kind.includes('videoinput'))
 
-    //Why is it not updating?
+    constraints.video.deviceId = d.deviceId
     if (navigator.getUserMedia === null) alert("No camera!")
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     const video = document.querySelector('video');
