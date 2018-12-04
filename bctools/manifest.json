@@ -1,7 +1,7 @@
 {
     "short_name": "BC Tools",
     "name": "BC Tools (Alpha Angle and Slope Angle)",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "manifest_version": 2,
     "icons": [
         {
