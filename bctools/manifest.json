@@ -10,7 +10,6 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#284E8C",
     "description": "A collection of simple tools for staying safe in the backcountry"
