@@ -10,13 +10,14 @@ var app = {
     },
     setBeta: function (e) {
         app.beta = Math.abs(Math.round(e.beta))
+        app.alpha = Math.abs(Math.round(e.beta - 90))
         document.getElementById("slope-angle-value").innerHTML = app.beta + '&#176;';
         var el = document.getElementById("alpha-angle-value")
         el.classList.remove("ok");
         el.classList.remove("warning");
         el.classList.remove("danger");
-        el.innerHTML = app.beta + '&#176;';
-        el.classList.add(app.beta < 18 ? 'ok' : app.beta > 20 ? 'danger' : 'warning')
+        el.innerHTML = app.alpha + '&#176;';
+        el.classList.add(app.alpha < 18 ? 'ok' : app.alpha > 20 ? 'danger' : 'warning')
         app.panels.forEach(el => el.setAttribute('hidden', true))
         if (app.beta <= 25 || app.beta >= 60) app.okPanel.removeAttribute('hidden')
         if ((app.beta > 25 && app.beta < 30) || (app.beta > 50 && app.beta < 60)) app.warningPanel.removeAttribute('hidden')
@@ -44,7 +45,7 @@ async function init(e) {
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia ||
         null;
-    alert('test')
+    //alert('test')
     if (navigator.getUserMedia === null) alert("No camera!")
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     const video = document.querySelector('video');
