@@ -38,6 +38,12 @@ const constraints = window.constraints = {
     video: { width: aaContainer.offsetWidth, height: aaContainer.offsetHeight }
 };
 async function init(e) {
+    window.navigator = window.navigator || {};
+    navigator.getUserMedia = navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        null;
+    if (navigator.getUserMedia === null) alert("No camera!")
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     const video = document.querySelector('video');
     const videoTracks = stream.getVideoTracks();
