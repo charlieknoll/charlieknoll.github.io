@@ -11,6 +11,12 @@ var app = {
     setBeta: function (e) {
         app.beta = Math.abs(Math.round(e.beta))
         document.getElementById("slope-angle-value").innerHTML = app.beta + '&#176;';
+        var el = document.getElementById("alpha-angle-value")
+        el.classList.remove("ok");
+        el.classList.remove("warning");
+        el.classList.remove("danger");
+        el.innerHTML = app.beta + '&#176;';
+        el.classList.add(app.beta < 18 ? 'ok' : app.beta > 20 ? 'danger' : 'warning')
         app.panels.forEach(el => el.setAttribute('hidden', true))
         if (app.beta <= 25 || app.beta >= 60) app.okPanel.removeAttribute('hidden')
         if ((app.beta > 25 && app.beta < 30) || (app.beta > 50 && app.beta < 60)) app.warningPanel.removeAttribute('hidden')
@@ -26,3 +32,18 @@ app.panels = Array.from(document.getElementsByClassName("slope-panel"))
 app.okPanel = app.panels.find(p => { return p.classList.contains('slope-ok') })
 app.warningPanel = app.panels.find(p => { return p.classList.contains('slope-warning') })
 app.dangerPanel = app.panels.find(p => { return p.classList.contains('slope-danger') })
+var aaContainer = document.getElementById("outer-container")
+const constraints = window.constraints = {
+    audio: false,
+    video: { width: aaContainer.offsetWidth, height: aaContainer.offsetHeight }
+};
+async function init(e) {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    const video = document.querySelector('video');
+    const videoTracks = stream.getVideoTracks();
+    console.log('Got stream with constraints:', constraints);
+    console.log(`Using video device: ${videoTracks[0].label}`);
+    window.stream = stream; // make variable available to browser console
+    video.srcObject = stream;
+}
+init()
