@@ -36,7 +36,7 @@ app.dangerPanel = app.panels.find(p => { return p.classList.contains('slope-dang
 var aaContainer = document.getElementById("outer-container")
 const constraints = window.constraints = {
     audio: false,
-    video: { facingMode: { exact: "environment" } }
+    video: { facingMode: "environment" }
     //video: { width: { max: aaContainer.offsetWidth }, height: { max: aaContainer.offsetHeight } }
 };
 async function init(e) {
