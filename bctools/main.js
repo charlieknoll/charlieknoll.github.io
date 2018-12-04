@@ -44,6 +44,7 @@ async function init(e) {
         navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia ||
         null;
+    alert('test')
     if (navigator.getUserMedia === null) alert("No camera!")
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     const video = document.querySelector('video');
