@@ -46,6 +46,8 @@ async function init(e) {
         navigator.mozGetUserMedia ||
         null;
     //alert('test')
+
+    //Why is it not updating?
     if (navigator.getUserMedia === null) alert("No camera!")
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     const video = document.querySelector('video');
