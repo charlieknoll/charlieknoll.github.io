@@ -12,7 +12,7 @@ UA 143 @ 12:10pm MST arrives 4:30pm JST (12:30am MST)
 
 #### Taxi (suttle bus service from airport)
 
-http://air.chuotaxi.co.jp/index.html?lang=en&tm=1546560711563
+[Chuo Taxi](http://air.chuotaxi.co.jp/index.html?lang=en&tm=1546560711563)
 
 #### Hotel in Myoko Jan 25 - 29 (4 nights)
 
@@ -32,9 +32,9 @@ The Address Akakura
 
 #### Tranfer to Hakuba
 
-https://www.skihakuba.com/myoko-hakuba-shuttle.htm
+[Overview](https://www.skihakuba.com/myoko-hakuba-shuttle.htm)
 
-https://naganosnowshuttle.com
+[Nagano Snow Shuttle Booking](https://naganosnowshuttle.com)
 
 
 #### Hotel in Hakuba Jan 29 - Feb 2 (4 nights)
