@@ -56,3 +56,5 @@ UA 142 Departs 6:15pm JST (2:15am MST) Arrives 12:40pm MST
 
 	
 Clay Simpson (650) 619-1747, he's doing the EVO trip the same week in Hakuba.
+
+Colin McKernan onegear.onelove@gmail.com 303-859-9254
