@@ -16,13 +16,17 @@ UA 143 @ 12:10pm MST arrives 4:30pm JST (12:30am MST)
 
 #### Hotel in Myoko Jan 25 - 29 (4 nights)
 
-The Address Akakura 
+The Address Akakura
 
 [Area Overview](http://myokokogen.net/images/myoko_ski_area_map_lg.jpg)
 
+[Webcams](http://myoko-nagano.com/webcam/myoko/)
+
 [Snow Report](https://www.snowjapan.com/japan-ski-resorts/niigata/myoko/akakura-onsen)
 
-[Hotel on Google Maps](https://www.google.com/maps/place/The+Address+Akakura/@36.8924622,138.1754331,17z/data=!3m1!4b1!4m5!3m4!1s0x5ff63deb69d893fd:0x5ce88da450f95acd!8m2!3d36.8924622!4d138.1776218) 
+[Dancing Snow Tours](http://www.dancingsnow.com/tours/tours.php)
+
+[Hotel on Google Maps](https://www.google.com/maps/place/The+Address+Akakura/@36.8924622,138.1754331,17z/data=!3m1!4b1!4m5!3m4!1s0x5ff63deb69d893fd:0x5ce88da450f95acd!8m2!3d36.8924622!4d138.1776218)
 
 [Hotel Website](https://www.theaddressakakura.com/)
 
@@ -45,6 +49,8 @@ The Address Akakura
 
 Hakuba Landmark
 
+[Webcams](https://hakubatravel.com/hakuba-webcams/)
+
 [Google Maps](https://www.google.com/maps/place/Hakuba+Landmark+Happo+Lodge/@36.7058852,137.8327315,17z/data=!4m12!1m6!3m5!1s0x5ff7ce0a9b90b58b:0x4ce53eeae7dcd4d!2sHakuba+Landmark+Happo+Lodge!8m2!3d36.7058852!4d137.8349202!3m4!1s0x5ff7ce0a9b90b58b:0x4ce53eeae7dcd4d!8m2!3d36.7058852!4d137.8349202)
 
 [Hotel Website](http://hakubalandmark.com/happo-lodge/)
@@ -56,11 +62,3 @@ Hakuba Landmark
 
 UA 142 Departs 6:15pm JST (2:15am MST) Arrives 12:40pm MST
 
-#### Other
-
-	
-Clay Simpson (650) 619-1747, he's doing the EVO trip the same week in Hakuba.
-
-Colin McKernan onegear.onelove@gmail.com 303-859-9254
-
-Marc Barella 303-305-9181 and email is marcbarella@hotmail.com
