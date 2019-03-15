@@ -75,4 +75,4 @@ async function init(e) {
         });
     }
 }
-window.addEventListener('ready', init);
+window.addEventListener('load', init);
