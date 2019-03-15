@@ -1,6 +1,6 @@
 var CACHE_NAME = 'bctools-cache-v1';
 var urlsToCache = [
-  './?v2',
+  './',
   'index.html?v2',
   'sw.js?v2',
   'manifest.json?v2',

@@ -62,7 +62,7 @@ async function init(e) {
     video.srcObject = stream;
 
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js?v2', {
+        navigator.serviceWorker.register('sw.js?v3', {
             scope: '.' // THIS IS REQUIRED FOR RUNNING A PROGRESSIVE WEB APP FROM A NON_ROOT PATH
         }).then(function (registration) {
             // Registration was successful
