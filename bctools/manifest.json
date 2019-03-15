@@ -10,7 +10,14 @@
             "type": "image/png"
         }
     ],
+    "start_url": "./?v2&utm_source=web_app_manifest",
     "display": "standalone",
+    "related_applications": [
+        {
+            "platform": "web",
+            "url": "https://charlieknoll.github.io/bctools/?v2"
+        }
+    ],
     "background_color": "#284E8C",
     "description": "A collection of simple tools for staying safe in the backcountry"
 }
