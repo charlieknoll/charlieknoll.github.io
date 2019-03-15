@@ -1,7 +1,7 @@
 {
     "short_name": "BC Tools",
     "name": "BC Tools (Alpha Angle and Slope Angle)",
-    "version": "0.0.6",
+    "version": "0.0.8",
     "manifest_version": 2,
     "icons": [
         {
@@ -10,14 +10,8 @@
             "type": "image/png"
         }
     ],
-    "start_url": "./?v2&utm_source=web_app_manifest",
+    "start_url": "./index.html",
     "display": "standalone",
-    "related_applications": [
-        {
-            "platform": "web",
-            "url": "https://charlieknoll.github.io/bctools/?v2"
-        }
-    ],
     "background_color": "#284E8C",
     "description": "A collection of simple tools for staying safe in the backcountry"
 }
