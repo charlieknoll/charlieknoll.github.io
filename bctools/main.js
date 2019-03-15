@@ -25,15 +25,17 @@ var app = {
     }
 
 }
-if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', app.setBeta, false);
-
-}
 app.panels = Array.from(document.getElementsByClassName("slope-panel"))
 app.okPanel = app.panels.find(p => { return p.classList.contains('slope-ok') })
 app.warningPanel = app.panels.find(p => { return p.classList.contains('slope-warning') })
 app.dangerPanel = app.panels.find(p => { return p.classList.contains('slope-danger') })
 var aaContainer = document.getElementById("outer-container")
+
+if (window.DeviceOrientationEvent) {
+    window.addEventListener('deviceorientation', app.setBeta, false);
+
+}
+
 const constraints = window.constraints = {
     audio: false,
     video: { facingMode: "environment" }
@@ -73,4 +75,4 @@ async function init(e) {
         });
     }
 }
-window.addEventListener('load', init);
+window.addEventListener('ready', init);
