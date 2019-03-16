@@ -1,13 +1,14 @@
 var CACHE_NAME = 'bctools-cache-v1';
 var urlsToCache = [
   './',
-  'index.html?v5',
-  'sw.js?v5',
-  'manifest.json?v5',
-  './img/postage-stamp-avy.jpg?v5',
-  'main.css?v5',
-  'main.js?v5',
-  'launcher-icon-4x.png?v5',
+  'index.html?v6',
+  'sw.js?v6',
+  'manifest.json?v6',
+  './img/postage-stamp-avy.jpg?v6',
+  './img/icon.png',
+  'main.css?v6',
+  'main.js?v6',
+  'launcher-icon-4x.png?v6',
   'https://fonts.googleapis.com/css?family=Ubuntu'
 ];
 console.log('loading sw');
