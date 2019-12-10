@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <script src="clappr-chromecast-plugin.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+</head>
+
+<body>
+  <div id="player"></div>
+  <script>
+    (function (open) {
+
+      XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
+        // if (url.indexOf('key/silk/mediaid/') != -1) {
+        //   rewrittenUrl = url.replace("https://mf.svc.nhl.com/ws/media/mf/v2.3/key/silk/mediaid/", "http://yrsprts.xyz/hls/nhl.php?t=7&url=");
+        // } else { rewrittenUrl = url; }
+        if (url.indexOf('https://mf.svc.nhl.com') != -1) {
+          rewrittenUrl = url.replace("https://mf.svc.nhl.com", "https://nhl.freegamez.ga");
+        } else { rewrittenUrl = url; }
+        open.call(this, method, rewrittenUrl, async, user, pass);
+      };
+    })(XMLHttpRequest.prototype.open);
+
+    var mustave = 'https://hlslive-akc.med2.med.nhl.com/hdnts=exp=1576052533~acl=/*~id=nhlGatewayId:2995094~data=70421803~hmac=216f46ca2a41ad44f1e10d5f961825b65be867c5fbd5e0a17985f8ca7cb58d32/4db9d8fb4c7aed9ac2f173e394b5a064/ls03/nhl/2019/12/08/NHL_GAME_VIDEO_COLBOS_M2_HOME_20191208_1574462497297/master_wired60.m3u8'
+    var data = { source: mustave }
+    var player = new Clappr.Player({
+      source: data.source, mimeType: "application/x-mpegURL",
+      autoPlay: true, height: "80%",
+      autoSeekFromUrl: true,
+      width: "80%",
+      //mediacontrol: { seekbar: "#607d8b", buttons: "#607d8b" }, preload: 'metadata', actualLiveTime: true, parentId: "#player"
+      //mediacontrol: { seekbar: "#607d8b", buttons: "#607d8b" }, preload: 'metadata', actualLiveTime: true,
+      parentId: "#player",
+      //plugins: { 'core': [LevelSelector] }
+      plugins: [ChromecastPlugin],
+      chromecast: {
+        appId: '9DFB77C0',
+        contentType: 'application/x-mpegurl',
+        media: {
+          type: ChromecastPlugin.None,
+          title: 'Coast to Coast',
+          subtitle: 'NHL Live and Replay'
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
