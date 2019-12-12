@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="/stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="player" class='full-width'></div>
+  <div id='container' class='remote-container'>
+    <button class='item remote-button' data-path='seek/-5'>5s &lt;</button>
+    <button class='item remote-button' data-path='seek/5'>5s ></button>
+    <button class='item remote-button' data-path='seek/-20'>20s &lt;</button>
+    <button class='item remote-button' data-path='seek/20'>20s ></button>
+    <button class='item remote-button' data-path='seek/-120'>2m &lt;</button>
+    <button class='item remote-button' data-path='seek/120'>2m ></button>
+    <button class='item remote-button' data-path='seek-percentage/100'>LIVE</button>
+    <button class='item remote-button' data-path='seek/1020'>17m ></button>
+  </div>
+  <div class='full-width'>
+    <button class='item remote-button' data-path='play-pause'>play/pause</button>
+  </div>
+  <div class='full-width game-list container-fluid' data-bind="foreach: games">
+    <div class='card'>
+      <div class="card-body">
+        <span data-bind="text: teams.away.team.name"></span><br> vs. <br><span
+          data-bind="text: teams.home.team.name"></span><br>
+
+        <div class='' data-bind="foreach: feeds">
+          <a href="" class="btn btn-primary m-2 media-link"
+            data-bind="attr: { 'data-playback-id': mediaPlaybackId}, text: mediaFeedType"></a>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <!-- <script src="clappr-chromecast-plugin.js"></script> -->
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  <script type="text/javascript" src="player-local.js"></script>
+  <script type="text/javascript" src="view-model.js"></script>
+
+</body>
+
+</html>

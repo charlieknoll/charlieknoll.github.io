@@ -1,0 +1,44 @@
+
+
+    .remote-container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    .remote-button {
+      background-color: #f1f1f1;
+      /* margin: 10px; */
+      padding: 20px;
+      font-size: 100px;
+      flex: 0 50%;
+      height: 20vh;
+      width: 100%;
+      font-size: 64px;
+    }
+
+    .remote-button {
+      padding: 15px;
+      font-size: 50px;
+    }
+
+    @media (min-height: 550px) {
+      .remote-button {
+        padding: 20px;
+        font-size: 100px;
+      }
+    }
+
+
+    .full-width {
+      flex-basis: 100%;
+
+    }
+    .game-list {
+      text-align: center;
+      font-size: 36px;
+    }
+    .media-link {
+      color: white;
+
+    }
