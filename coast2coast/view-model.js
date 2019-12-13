@@ -1,8 +1,9 @@
 var viewModel = {
   baseUrl: 'https://statsapi.web.nhl.com/api/v1/',
   games: ko.observable(),
-  currentGameId: null,
+  currentPlaybackId: null,
   scheduleDate: ko.observable(),
+  playbackCache: {},
   init: async function () {
     console.log('init');
     this.scheduleDate(this.formatDate(new Date()));
@@ -78,7 +79,13 @@ var viewModel = {
       alert(feedUrl)
       return
     }
-    playerProxy.load(feedUrl, 0)
+    if (viewModel.currentPlaybackId) {
+      viewModel.playbackCache[viewModel.currentPlaybackId] = playerProxy.getCurrentTime()
+    }
+
+    playerProxy.load(feedUrl, viewModel.playbackCache[viewModel.currentPlaybackId] ? viewModel.playbackCache[viewModel.currentPlaybackId] : 0)
+    viewModel.currentPlaybackId = e.target.dataset.playbackId
+
   },
   getGame: async function (id) {
     const response = await fetch(this.baseUrl + 'game/' + id + '/content')

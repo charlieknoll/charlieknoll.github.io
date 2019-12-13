@@ -25,18 +25,24 @@ var playerProxy = {
       return
     }
   },
-  load: async function (url, t) {
-    player.load(url, true)
+  load: function (url, t) {
+    player.load(url, false)
+    player.seek(parseInt(t) + 1);
+    //player.seek(10);
     player.play()
-    player.seek(parseInt(t));
+  },
+  getCurrentTime: function () {
+    return player.getCurrentTime() + player.getStartTimeOffset()
   }
 }
 
 var player = new Clappr.Player({
   mimeType: "application/x-mpegURL",
-  autoPlay: true,
-  autoSeekFromUrl: true,
+  autoPlay: false,
   width: "100%",
   parentId: "#player",
   plugins: { 'core': [LevelSelector] }
 });
+player.on(Clappr.Events.PLAYBACK_READY, function () {
+  console.log('PLAYBACK_READY')
+})
