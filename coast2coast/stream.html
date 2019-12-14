@@ -12,8 +12,6 @@
 
   <div id="player" class='full-width'></div>
   <div id='container' class='remote-container'>
-    <button class='item remote-button' data-path='seek/-5'>5s &lt;</button>
-    <button class='item remote-button' data-path='seek/5'>5s ></button>
     <button class='item remote-button' data-path='seek/-10'>10s &lt;</button>
     <button class='item remote-button' data-path='seek/20'>20s ></button>
     <button class='item remote-button' data-path='seek/-120'>2m &lt;</button>
@@ -33,9 +31,11 @@
         <span data-bind="text: teams.away.team.name"></span> <small
           data-bind="text: teams.away.team.record"></small><br>
 
-        <img class='logo' data-bind="attr: {src: teams.away.team.logo}">
-        vs.
-        <img class='logo' data-bind="attr: {src: teams.home.team.logo}">
+        <a class="labelText" target="nhlEditorial" data-bind="attr: {href: editorialUrl}"><img class='logo'
+            data-bind="attr: {src: teams.away.team.logo, 'data-teamid': teams.away.team.id}">
+          vs.
+          <img class='logo' data-bind="attr: {src: teams.home.team.logo, 'data-teamid': teams.home.team.id}">
+        </a>
         <br><span data-bind="text: teams.home.team.name"></span> <small
           data-bind="text: teams.home.team.record"></small><br>
         <span data-bind="text: venue.name"></span> @ <span data-bind="text: gameDateStr"></span>

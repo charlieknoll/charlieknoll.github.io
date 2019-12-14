@@ -32,6 +32,7 @@ var playerProxy = {
     player.play()
   },
   getCurrentTime: async function () {
+    var time = player.getCurrentTime() + player.getStartTimeOffset()
     return player.getCurrentTime() + player.getStartTimeOffset()
   }
 }
