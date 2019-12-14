@@ -1,4 +1,6 @@
-
+    body {
+      background-color: #6f263d;
+    }
 
     .remote-container {
       display: flex;
@@ -9,25 +11,34 @@
     .remote-button {
       background-color: #f1f1f1;
       /* margin: 10px; */
-      padding: 20px;
-      font-size: 100px;
-      flex: 0 50%;
-      height: 20vh;
-      width: 100%;
+      padding: 8px;
       font-size: 64px;
+      flex: 0 50%;
+      height: 10vh;
+      width: 100%;
     }
-
-    .remote-button {
-      padding: 15px;
-      font-size: 50px;
-    }
-
-    @media (min-height: 550px) {
+    @media only screen and (max-height: 750px) and (orientation: landscape) {
       .remote-button {
-        padding: 20px;
-        font-size: 100px;
+        height: 20vh;
       }
     }
+
+/* @media all and (max-width: 750px) and (orientation: landscape) {
+      .remote-button {
+      font-size: 36px;
+      height: 15vh;
+      }
+
+    }
+@media all and (max-height: 750px) and (orientation: portrait) {
+      .remote-button {
+      font-size: 36px;
+      height: 15vh;
+      }
+
+    } */
+
+
 
 
     .full-width {
@@ -36,9 +47,34 @@
     }
     .game-list {
       text-align: center;
-      font-size: 36px;
+      font-size: 48px;
     }
     .media-link {
       color: white;
 
     }
+    .game-list .btn {
+      font-size: 36px;
+    }
+    .game-list small {
+      font-size: .5em;
+      color: grey;
+    }
+    .logo {
+      width: 300
+    }
+    .game-list .card {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .loading {
+      color: white;
+      font-size: 4em;
+    }
+    a {
+      color: white;
+    }
+    a:hover {
+      color: white;
+    }
+

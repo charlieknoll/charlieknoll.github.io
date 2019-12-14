@@ -31,18 +31,47 @@ var playerProxy = {
     //player.seek(10);
     player.play()
   },
-  getCurrentTime: function () {
+  getCurrentTime: async function () {
     return player.getCurrentTime() + player.getStartTimeOffset()
   }
 }
 
-var player = new Clappr.Player({
-  mimeType: "application/x-mpegURL",
-  autoPlay: false,
-  width: "100%",
-  parentId: "#player",
-  plugins: { 'core': [LevelSelector] }
-});
-player.on(Clappr.Events.PLAYBACK_READY, function () {
-  console.log('PLAYBACK_READY')
-})
+function getDimensions() {
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  var playerHeight
+  switch (window.orientation) {
+    case -90: case 90:
+      playerHeight = parseInt(h * 9 / 16) - 10
+      break;
+    default:
+      playerHeight = parseInt(w * 9 / 16)
+      break;
+  }
+
+  return {
+    width: w,
+    height: playerHeight
+  }
+
+}
+var player
+function init() {
+  var dimensions = getDimensions()
+  window.player = new Clappr.Player({
+    mimeType: "application/x-mpegURL",
+    autoPlay: false,
+    width: dimensions.width,
+    height: dimensions.height,
+    parentId: "#player",
+    plugins: { 'core': [LevelSelector] }
+  });
+}
+
+function doOnOrientationChange() {
+  var dimensions = getDimensions()
+  window.player.configure(dimensions)
+}
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+init()
