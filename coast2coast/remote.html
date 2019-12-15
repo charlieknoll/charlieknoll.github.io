@@ -12,14 +12,6 @@
 
   <div id="player" class='full-width'></div>
   <div id='container' class='remote-container'>
-    <button class='remote-button' data-path='seek/-10'>10s &lt;</button>
-    <button class='remote-button' data-path='seek/20'>20s ></button>
-    <button class='remote-button' data-path='seek/-120'>2m &lt;</button>
-    <button class='remote-button' data-path='seek/120'>2m ></button>
-    <button class='remote-button' data-path='restart'>Restart</button>
-    <button class='remote-button' data-path='toggle'>Toggle</button>
-    <button class='remote-button' data-path='seek-percentage/100'>LIVE</button>
-    <button class='remote-button' data-path='seek/1020'>17m ></button>
     <!-- ko foreach: devices -->
     <button class='remote-button cast' data-bind="attr: {'data-path': 'cast/' + $data}">
       <span class="fa-stack">
@@ -33,6 +25,15 @@
     <button class='remote-button cast' data-path="reset">
       <i class="fa fa-refresh" aria-hidden="true"></i>
     </button>
+    <button class='remote-button' data-path='seek/-10'>10s &lt;</button>
+    <button class='remote-button' data-path='seek/20'>20s ></button>
+    <button class='remote-button' data-path='seek/-120'>2m &lt;</button>
+    <button class='remote-button' data-path='seek/120'>2m ></button>
+    <button class='remote-button' data-path='restart'>Restart</button>
+    <button class='remote-button' data-path='toggle'>Toggle</button>
+    <button class='remote-button' data-path='seek-percentage/100'>LIVE</button>
+    <button class='remote-button' data-path='seek/1020'>17m ></button>
+
   </div>
   <div class='full-width'>
     <button class='item remote-button' data-path='play-pause'>play/pause</button>

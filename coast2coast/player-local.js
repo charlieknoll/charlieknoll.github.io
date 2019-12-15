@@ -65,6 +65,7 @@ function init() {
     width: dimensions.width,
     height: dimensions.height,
     parentId: "#player",
+    poster: "https://charlieknoll.github.io/coast2coast/images/poster.jpg",
     plugins: { 'core': [LevelSelector] }
   });
 }
