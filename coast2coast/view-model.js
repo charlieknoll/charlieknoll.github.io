@@ -3,6 +3,8 @@ function ViewModel() {
   this.games = ko.observable();
   this.currentPlaybackId = null;
   this.currentGame = null;
+  this.devices = [1, 2, 3, 4];
+  this.device = ko.observable(-1)
   this.dateOffset = ko.observable(0);
   this.scheduleDate = ko.computed(function () {
     return moment().add(this.dateOffset(), 'days').format('MMM Do')
@@ -16,10 +18,13 @@ function ViewModel() {
     const localStorageCache = window.localStorage.getItem('playbackCache')
     if (localStorageCache) this.playbackCache = JSON.parse(localStorageCache);
 
-    [].slice.call(document.getElementsByClassName('item')).map(i => {
+    [].slice.call(document.getElementsByClassName('remote-button')).map(i => {
       i.onclick = async function (e) {
         e.preventDefault();
         let path = e.target.dataset.path
+        if (!path) path = e.target.parentNode.dataset.path
+        if (!path) path = e.target.parentNode.parentNode.dataset.path
+
         if (path == 'restart' && viewModel.currentGame) {
           const currentTime = await playerProxy.getCurrentTime()
           path = viewModel.currentGame.mediaState == 'MEDIA_ON' ? 'seek/' + (3600 - currentTime) : 'seek-percentage/0'
@@ -37,8 +42,12 @@ function ViewModel() {
     }
     await this.loadSchedule()
     window.setInterval(async function () {
+      if (playerProxy.getDevice) {
+        viewModel.device(await playerProxy.getDevice())
+      }
       if (!viewModel.currentPlaybackId) return
-      viewModel.playbackCache[viewModel.currentPlaybackId] = await playerProxy.getCurrentTime()
+      const time = parseInt(await playerProxy.getCurrentTime())
+      if (time > 0) viewModel.playbackCache[viewModel.currentPlaybackId] = time;
       window.localStorage.setItem('playbackCache', JSON.stringify(viewModel.playbackCache));
 
     }, 2000)

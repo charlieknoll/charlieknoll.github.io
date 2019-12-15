@@ -22,6 +22,18 @@
         height: 20vh;
       }
     }
+    .remote-button.cast {
+      flex: 0 20%;
+
+    }
+   .cast-num {
+      font-size: 80%;
+    color: grey;
+    margin-left: 44px;
+    }
+    .cast-num-active {
+      color: steelblue;
+    }
     .media-control svg {
       height:96px;
 
